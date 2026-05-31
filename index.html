@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AIAGP - Selector de agentes IA</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="AIAGP inicio">
+        <span class="brand-mark">A</span>
+        <span>
+          <strong>AIAGP</strong>
+          <small>Agentes IA configurables</small>
+        </span>
+      </a>
+      <nav aria-label="Secciones principales">
+        <a href="#agentes">Agentes</a>
+        <a href="#configuracion">Configuracion</a>
+        <a href="#inteligencia">Inteligencia</a>
+        <a href="#datos">Datos</a>
+        <a href="#stack">Stack</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Mano amiga digital, no reemplazo humano</p>
+          <h1>Elige, ajusta y entrena el agente IA que trabaja contigo.</h1>
+          <p>
+            AIAGP traduce cada perfil en un system prompt dinamico, recupera
+            memoria vectorial autorizada y consulta datos externos solo cuando
+            hacen falta.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#agentes">Elegir agente</a>
+            <a class="button secondary" href="#configuracion">Configurar perfil</a>
+          </div>
+        </div>
+        <aside class="status-panel" aria-label="Estado del agente seleccionado">
+          <div class="panel-head">
+            <span>Agente recomendado</span>
+            <strong id="heroAgentName" aria-live="polite">Growth Companion</strong>
+          </div>
+          <div class="signal-grid">
+            <div>
+              <small>Confianza</small>
+              <strong id="confidenceMetric" aria-live="polite">92%</strong>
+            </div>
+            <div>
+              <small>Fuentes activas</small>
+              <strong id="sourcesMetric" aria-live="polite">8</strong>
+            </div>
+            <div>
+              <small>Modo</small>
+              <strong id="modeMetric" aria-live="polite">Semi-auto</strong>
+            </div>
+          </div>
+          <div class="live-card">
+            <span class="pulse"></span>
+            <p id="liveInsight" aria-live="polite">Analizando tendencia social positiva en Instagram y Reddit.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="agentes" class="section band">
+        <div class="section-title">
+          <p class="eyebrow">Biblioteca de agentes</p>
+          <h2>Seleccion por objetivo de uso</h2>
+        </div>
+        <div class="agent-grid" id="agentGrid"></div>
+      </section>
+
+      <section id="configuracion" class="section configurator">
+        <div class="section-title">
+          <p class="eyebrow">Ajustable por persona o empresa</p>
+          <h2>Centro de configuracion</h2>
+        </div>
+        <div class="config-layout">
+          <form class="config-panel" id="configForm">
+            <fieldset>
+              <legend>Perfil</legend>
+              <label>
+                Tipo de usuario
+                <select id="profileType">
+                  <option value="personal">Personal</option>
+                  <option value="empresa" selected>Empresa</option>
+                  <option value="creator">Creador de contenido</option>
+                  <option value="equipo">Equipo especializado</option>
+                </select>
+              </label>
+              <label>
+                Sector principal
+                <select id="industry">
+                  <option>Ecommerce</option>
+                  <option>Marketing</option>
+                  <option>Finanzas</option>
+                  <option>Salud</option>
+                  <option>Logistica</option>
+                  <option>Educacion</option>
+                  <option>Custom</option>
+                </select>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Autonomia</legend>
+              <label class="range-label" for="autonomy">
+                Nivel de accion
+                <span id="autonomyLabel">Proponer y pedir aprobacion</span>
+              </label>
+              <input id="autonomy" type="range" min="1" max="3" value="2" aria-describedby="autonomyLabel">
+              <div class="ticks" aria-hidden="true">
+                <span>Manual</span>
+                <span>Semi-auto</span>
+                <span>Auto limitado</span>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Aprendizaje</legend>
+              <label class="check-row">
+                <input type="checkbox" id="memoryEnabled" checked>
+                Memoria vectorial con consentimiento del usuario
+              </label>
+              <label class="check-row">
+                <input type="checkbox" id="socialEnabled" checked>
+                Tools para redes sociales y datos en tiempo real
+              </label>
+              <label class="check-row">
+                <input type="checkbox" id="humanGuardrails" checked>
+                Limites para no reemplazar decisiones humanas
+              </label>
+            </fieldset>
+          </form>
+
+          <aside class="summary-panel">
+            <div class="summary-header">
+              <span>Configuracion viva</span>
+              <strong id="selectedAgentTitle" aria-live="polite">Growth Companion</strong>
+            </div>
+            <pre id="configPreview" aria-label="Vista previa de configuracion tecnica"></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section id="inteligencia" class="section band">
+        <div class="section-title">
+          <p class="eyebrow">Crecimiento continuo controlado</p>
+          <h2>Arquitectura de inteligencia</h2>
+        </div>
+        <div class="intelligence-grid">
+          <article>
+            <span class="node">02</span>
+            <h3>Prompt dinamico</h3>
+            <p>El perfil elegido combina un system prompt base con datos del usuario.</p>
+          </article>
+          <article>
+            <span class="node">4a</span>
+            <h3>Memoria vectorial</h3>
+            <p>Conversaciones a embeddings; se recupera contexto relevante en tiempo real.</p>
+          </article>
+          <article>
+            <span class="node">4b</span>
+            <h3>Tools externas</h3>
+            <p>APIs sociales, analytics y busqueda web se consultan solo cuando aportan valor.</p>
+          </article>
+          <article>
+            <span class="node">05</span>
+            <h3>Aprendizaje continuo</h3>
+            <p>Feedback, pesos de retrieval y perfil mejoran sin fine-tuning constante.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="datos" class="section dashboard">
+        <div class="section-title">
+          <p class="eyebrow">Senales actualizadas</p>
+          <h2>Panel de redes y estadisticas</h2>
+        </div>
+        <div class="dashboard-grid">
+          <article class="metric-card">
+            <span>Sentimiento social</span>
+            <strong id="sentimentValue" aria-live="polite">+0.34</strong>
+            <meter id="sentimentMeter" min="-1" max="1" value="0.34" aria-label="Sentimiento social"></meter>
+            <small>Meta Graph API, YouTube Analytics, busqueda web y conectores autorizados.</small>
+          </article>
+          <article class="metric-card">
+            <span>Oportunidades</span>
+            <strong id="opportunityValue" aria-live="polite">12</strong>
+            <meter id="opportunityMeter" min="0" max="20" value="12" aria-label="Oportunidades detectadas"></meter>
+            <small>Detectadas por patron de demanda, conversacion y competencia.</small>
+          </article>
+          <article class="metric-card">
+            <span>Riesgo de automatizacion</span>
+            <strong id="riskValue" aria-live="polite">Bajo</strong>
+            <meter id="riskMeter" min="0" max="100" value="28" aria-label="Riesgo de automatizacion"></meter>
+            <small>Acciones sensibles quedan en aprobacion humana.</small>
+          </article>
+        </div>
+      </section>
+
+      <section id="stack" class="section band">
+        <div class="section-title">
+          <p class="eyebrow">Stack recomendado</p>
+          <h2>Base tecnica de produccion</h2>
+        </div>
+        <div class="stack-grid">
+          <article><span>Frontend</span><strong>Next.js + TypeScript</strong></article>
+          <article><span>Backend API</span><strong>FastAPI</strong></article>
+          <article><span>Orquestacion</span><strong>LangChain o LlamaIndex</strong></article>
+          <article><span>LLM base</span><strong>Claude API</strong></article>
+          <article><span>Memoria vectorial</span><strong>Pinecone o Chroma</strong></article>
+          <article><span>BD relacional</span><strong>PostgreSQL</strong></article>
+          <article><span>Auth</span><strong>Auth0 o Clerk</strong></article>
+          <article><span>APIs sociales</span><strong>Meta Graph + YouTube Data</strong></article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
