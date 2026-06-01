@@ -1,6 +1,6 @@
 # AIAGP Web Prototype
 
-Website: https://www.aiagp-agent.com
+Website: https://slm7-tech.github.io/NEW-ADAPTABLE-IA-AGENT/
 
 AIAGP is an adaptable AI agent platform that uses dynamic system prompts,
 vector memory, real-time tools, and human approval rules to assist users
@@ -24,7 +24,9 @@ tecnicas para convertir cada perfil de usuario en un agente ajustable.
 
 ## Abrir
 
-Abre `index.html` en el navegador.
+Abre `index.html` en el navegador o visita la version publicada en GitHub Pages:
+
+https://slm7-tech.github.io/NEW-ADAPTABLE-IA-AGENT/
 
 ## Stack tecnico recomendado
 
