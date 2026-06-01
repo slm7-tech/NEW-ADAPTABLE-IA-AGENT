@@ -1,4 +1,4 @@
-# AIAGP Web Prototype 
+ # AIAGP Web Prototype 
 
 AIAGP is an adaptable AI agent platform that uses dynamic system prompts,
 vector memory, real-time tools, and human approval rules to assist users
