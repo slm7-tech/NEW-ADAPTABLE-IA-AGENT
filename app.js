@@ -4,7 +4,7 @@ const agents = [
     name: "Growth Companion",
     type: "Marketing y ventas",
     description: "Detecta oportunidades comerciales, tendencias sociales y mejoras de conversion.",
-    basePrompt: "Eres un agente de crecimiento. Ayudas a interpretar ventas, audiencia y campanas. Recomiendas acciones con datos, pero nunca decides por el usuario.",
+    basePrompt: "Eres un agente de crecimiento. Ayudas a interpretar ventas, audiencia y campañas. Recomiendas acciones con datos, pero nunca decides por el usuario.",
     confidence: 92,
     sources: 8,
     sentiment: 0.34,
@@ -18,7 +18,7 @@ const agents = [
     name: "Ops Guardian",
     type: "Operaciones",
     description: "Vigila inventario, proveedores, documentos y alertas de ejecucion.",
-    basePrompt: "Eres un agente operativo. Priorizas inventario, proveedores, calidad y continuidad. Informas riesgos y solicitas aprobacion para cualquier accion sensible.",
+    basePrompt: "Eres un agente operativo. Priorizas inventario, proveedores, calidad y continuidad. Informas riesgos y solicitas aprobación para cualquier accion sensible.",
     confidence: 88,
     sources: 11,
     sentiment: 0.12,
@@ -32,13 +32,13 @@ const agents = [
     name: "Personal Ally",
     type: "Uso personal",
     description: "Aprende preferencias, organiza objetivos y acompana decisiones cotidianas.",
-    basePrompt: "Eres un agente personal de apoyo. Recuerdas preferencias con consentimiento, sugieres opciones y fortaleces la autonomia del usuario sin sustituir su criterio.",
+    basePrompt: "Eres un agente personal de apoyo. Recuerdas preferencias con consentimiento, sugieres opciones y fortaleces la autonomía del usuario sin sustituir su criterio.",
     confidence: 95,
     sources: 5,
     sentiment: 0.22,
     opportunities: 9,
     risk: 18,
-    insight: "Optimizando recomendaciones segun memoria aprobada por el usuario.",
+    insight: "Optimizando recomendaciones según memoria aprobada por el usuario.",
     modules: ["memory", "calendar", "documents", "notifications"]
   },
   {
@@ -46,7 +46,7 @@ const agents = [
     name: "Finance Sentinel",
     type: "Finanzas",
     description: "Cruza KPIs, presupuestos, reportes y riesgo antes de recomendar acciones.",
-    basePrompt: "Eres un agente financiero prudente. Analizas presupuestos, margenes y riesgos. Nunca ejecutas decisiones financieras sin aprobacion humana explicita.",
+    basePrompt: "Eres un agente financiero prudente. Analizas presupuestos, margenes y riesgos. Nunca ejecutas decisiones financieras sin aprobación humana explícita.",
     confidence: 86,
     sources: 9,
     sentiment: -0.08,
@@ -65,7 +65,7 @@ const autonomyModes = {
 
 const profilePrompts = {
   personal: "Perfil personal: adapta el lenguaje a objetivos, habitos, preferencias y limites definidos por el usuario.",
-  empresa: "Perfil empresarial: prioriza KPIs, cumplimiento, trazabilidad, roles internos y aprobacion humana.",
+  empresa: "Perfil empresarial: prioriza KPIs, cumplimiento, trazabilidad, roles internos y aprobación humana.",
   creator: "Perfil creador de contenido: prioriza audiencia, calendario editorial, rendimiento de publicaciones y datos de plataformas.",
   equipo: "Perfil de equipo especializado: coordina tareas, ownership, permisos y reportes accionables por rol."
 };
@@ -164,7 +164,7 @@ function renderState() {
       system_prompt: [
         selectedAgent.basePrompt,
         profilePrompt,
-        "Regla critica: informa, recomienda y pide aprobacion. Nunca reemplaces la decision del usuario."
+        "Regla crítica: informa, recomienda y pide aprobación. Nunca reemplaces la decision del usuario."
       ].join(" ")
     },
     layer_4a_user_memory: {
@@ -183,10 +183,10 @@ function renderState() {
         "Meta Graph API",
         "YouTube Data API",
         "YouTube Analytics API",
-        "busqueda_web",
+        "búsqueda_web",
         "CRM_o_ERP_API"
       ],
-      call_policy: "el LLM decide cuando consultar datos externos segun la tarea"
+      call_policy: "el LLM decide cuando consultar datos externos según la tarea"
     },
     layer_5_continuous_learning: {
       fine_tune_base_model_continuously: false,
